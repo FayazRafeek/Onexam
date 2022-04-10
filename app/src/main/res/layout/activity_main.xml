@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/prof_inc_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/orange1"
+        android:elevation="10dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/incp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your account is incomplete!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/comp_pro_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/incp_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="Complete Profile" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profile_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_profile"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/purple_500" />
+
+
+    <TextView
+        android:id="@+id/hero_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exams for you"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/main_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24sp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hero_text">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_recycler"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
