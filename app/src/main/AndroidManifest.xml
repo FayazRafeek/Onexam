@@ -16,15 +16,6 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ScoreActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SetsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CategoryActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity2"
             android:theme="@style/SplashStyle"
             android:exported="true"
